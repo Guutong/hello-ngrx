@@ -1,0 +1,16 @@
+mat-card-title,
+mat-card-content {
+  display: flex;
+  justify-content: center;
+}
+mat-card.book {
+  width: 300px;
+  height: auto;
+  margin: 15px;
+}
+
+div.books {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+}  
