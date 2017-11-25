@@ -21,6 +21,7 @@ import { StoreModule } from '@ngrx/store';
 import { reducers } from './reducers';
 import { ResultsCountComponent } from './results-count/results-count.component';
 import { EffectsModule } from '@ngrx/effects';
+import { StoreDevtoolsModule } from '@ngrx/store-devtools';
 import { BookEffects } from './book.effects';
 
 @NgModule({
@@ -43,7 +44,8 @@ import { BookEffects } from './book.effects';
     MatFormFieldModule,
     MatSelectModule,
     StoreModule.forRoot(reducers),
-    EffectsModule.forRoot([BookEffects])
+    EffectsModule.forRoot([BookEffects]),
+    StoreDevtoolsModule.instrument()
   ],
   exports: [MatCardModule],
   providers: [GoogleBooksService],

@@ -4,10 +4,11 @@ mat-card-content {
   justify-content: center;
 }
 mat-card.book {
-  width: 400px;
-  height: 150px;
+  width: 300px;
+  height: auto;
   margin: 15px;
 }
+
 div.books {
   display: flex;
   flex-wrap: wrap;

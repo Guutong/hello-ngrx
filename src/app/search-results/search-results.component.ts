@@ -11,4 +11,11 @@ export class SearchResultsComponent implements OnInit {
   constructor() {}
 
   ngOnInit() {}
+
+  displayAuthor(authors: any[]) {
+    if (authors && authors.length > 0) {
+      return authors.join(', ');
+    }
+    return '';
+  }
 }
