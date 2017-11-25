@@ -1,2 +1,3 @@
-<app-book-search (search)="onSearch($event)"></app-book-search>
-<app-search-results [books]="books"></app-search-results>
+<app-book-search [value]="terms | async" (search)="onSearch($event)"></app-book-search>
+<app-results-count></app-results-count>
+<app-search-results [books]="books | async"></app-search-results>

@@ -19,13 +19,17 @@ import {
 } from '@angular/material';
 import { StoreModule } from '@ngrx/store';
 import { reducers } from './reducers';
+import { ResultsCountComponent } from './results-count/results-count.component';
+import { EffectsModule } from '@ngrx/effects';
+import { BookEffects } from './book.effects';
 
 @NgModule({
   declarations: [
     AppComponent,
     BookSearchComponent,
     SearchComponent,
-    SearchResultsComponent
+    SearchResultsComponent,
+    ResultsCountComponent
   ],
   imports: [
     BrowserModule,
@@ -39,6 +43,7 @@ import { reducers } from './reducers';
     MatFormFieldModule,
     MatSelectModule,
     StoreModule.forRoot(reducers),
+    EffectsModule.forRoot([BookEffects])
   ],
   exports: [MatCardModule],
   providers: [GoogleBooksService],
