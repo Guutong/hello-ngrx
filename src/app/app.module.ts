@@ -1,18 +1,47 @@
+import { GoogleBooksService } from './google-books.service';
 import { BrowserModule } from '@angular/platform-browser';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { NgModule } from '@angular/core';
-
+import { HttpModule } from '@angular/http';
+import { RouterModule } from '@angular/router';
+import { ReactiveFormsModule } from '@angular/forms';
 
 import { AppComponent } from './app.component';
-
+import { BookSearchComponent } from './book-search/book-search.component';
+import { SearchComponent } from './search/search.component';
+import { SearchResultsComponent } from './search-results/search-results.component';
+import {
+  MatCardModule,
+  MatToolbarModule,
+  MatInputModule,
+  MatFormFieldModule,
+  MatSelectModule
+} from '@angular/material';
+import { StoreModule } from '@ngrx/store';
+import { reducers } from './reducers';
 
 @NgModule({
   declarations: [
-    AppComponent
+    AppComponent,
+    BookSearchComponent,
+    SearchComponent,
+    SearchResultsComponent
   ],
   imports: [
-    BrowserModule
+    BrowserModule,
+    BrowserAnimationsModule,
+    ReactiveFormsModule,
+    HttpModule,
+    RouterModule.forRoot([{ path: '', component: SearchComponent }]),
+    MatCardModule,
+    MatInputModule,
+    MatToolbarModule,
+    MatFormFieldModule,
+    MatSelectModule,
+    StoreModule.forRoot(reducers),
   ],
-  providers: [],
+  exports: [MatCardModule],
+  providers: [GoogleBooksService],
   bootstrap: [AppComponent]
 })
-export class AppModule { }
+export class AppModule {}

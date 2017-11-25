@@ -1,0 +1,9 @@
+<div class="books">
+  <mat-card *ngFor="let book of books" class="book">
+    <mat-card-title-group>
+      <img mat-card-sm-image *ngIf="book.volumeInfo.imageLinks?.smallThumbnail" [src]="book.volumeInfo.imageLinks?.smallThumbnail"
+      />
+      <mat-card-title>{{ book.volumeInfo.title }}</mat-card-title>
+    </mat-card-title-group>
+  </mat-card>
+</div>
